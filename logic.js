@@ -1,8 +1,19 @@
 const r=1,p=2,s=3;
+let temp;
+
+const choice={
+    1:"rock",
+    2:"paper",
+    3:"scissor"
+};
+
 
 function getRandomNumber() {
   return Math.floor(Math.random() * 3) + 1;
 }
+
+
+// console.log(choice[getRandomNumber()]);
 
 // let possibleCombination=[
 //     [r,r],[r,p],[r,s],
@@ -14,84 +25,54 @@ let rock=document.getElementById("userChoosesRock");
 let paper=document.getElementById("userChoosesPaper");
 let scissor=document.getElementById("userChoosesScissor");
 
-
-
-rock.addEventListener("click",()=>
+function checkWinOrLose(computerMove,possibleCombination,temp)
 {
-    let possibleCombination=[
-    [r,getRandomNumber()]]
-
     for (let el of possibleCombination){
 
     if(el[0]===el[1])
     {
-        console.log("draw");
+        console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Draw!!!`);
     }
 
     else if(el[0]-el[1]===1||el[0]-el[1]===-1){
-        el[0]>el[1]?console.log(`${el[0]} wins ${el[1]}`):console.log(`${el[1]} wins ${el[0]}`);
+        el[0]>el[1]?console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`):console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`);
     }
 
     else if(el[0]-el[1]===2||el[0]-el[1]===-2){
-        el[0]>el[1]?console.log(`${el[1]} wins ${el[0]}`):console.log(`${el[0]} wins ${el[1]}`);
+        el[0]>el[1]?console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`):console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`);
     }
     
     else{
         console.log("Error in program.");
     }
-}
+}}
 
+rock.addEventListener("click",()=>
+{
+    let computerMove=getRandomNumber();
+    let possibleCombination=[
+    [r,computerMove]];
 
+    checkWinOrLose(computerMove,possibleCombination,r);
+    
 });
 
 paper.addEventListener("click",()=>
 {
+    let computerMove=getRandomNumber();
     let possibleCombination=[
-    [p,getRandomNumber()]]
+    [p,computerMove]]
 
-    for (let el of possibleCombination){
-
-    if(el[0]===el[1])
-    {
-        console.log("draw");
-    }
-
-    else if(el[0]-el[1]===1||el[0]-el[1]===-1){
-        el[0]>el[1]?console.log(`${el[0]} wins ${el[1]}`):console.log(`${el[1]} wins ${el[0]}`);
-    }
-
-    else if(el[0]-el[1]===2||el[0]-el[1]===-2){
-        el[0]>el[1]?console.log(`${el[1]} wins ${el[0]}`):console.log(`${el[0]} wins ${el[1]}`);
-    }
-    
-    else{
-        console.log("Error in program.");
-    }}
+    checkWinOrLose(computerMove,possibleCombination,p);
 });
 
 
 scissor.addEventListener("click",()=>{
+    let computerMove=getRandomNumber();
     let possibleCombination=[
-    [s,getRandomNumber()]]
+    [s,computerMove]]
 
-    for (let el of possibleCombination){
-
-    if(el[0]===el[1])
-    {
-        console.log("draw");
-    }
-
-    else if(el[0]-el[1]===1||el[0]-el[1]===-1){
-        el[0]>el[1]?console.log(`${el[0]} wins ${el[1]}`):console.log(`${el[1]} wins ${el[0]}`);
-    }
-
-    else if(el[0]-el[1]===2||el[0]-el[1]===-2){
-        el[0]>el[1]?console.log(`${el[1]} wins ${el[0]}`):console.log(`${el[0]} wins ${el[1]}`);
-    }
-    
-    else{
-        console.log("Error in program.");
-    }}
+     checkWinOrLose(computerMove,possibleCombination,s);
 });
 
 
