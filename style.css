@@ -1,0 +1,69 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+        background: linear-gradient(
+    90deg,
+    #6ec9cc 0%,
+    #4a8db3 50%,
+    #022341 100%
+    
+  );
+        height:100vh;
+        
+}
+
+.headingIconContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+   
+}
+
+.headingIcon{
+    width:5rem;
+    height:6rem;
+}
+
+#mainHeading{
+    font-size:1.6rem;
+    padding-bottom:1rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:rgb(249, 220, 163);
+     border:0.2rem solid rgb(255, 224, 177);
+    border-radius:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-top:0.6rem;
+    margin-bottom:1rem;
+}
+
+#mainHeading:hover{
+    cursor:pointer;
+    box-shadow:0.2rem 0.2rem 1rem rgb(82, 63, 1);
+    background-color:rgb(255, 243, 153);
+    color:black;
+    transform:scale(0.9);
+    transition:box-shadow 200ms,background-color 200ms , color 200ms,transform 200ms;
+    
+}
+
+#rockHeading,#paperHeading{
+    padding-bottom:0.6rem;
+}
+
+#heart{
+    color:red;
+}
+
+.madeWithLoveContainer{
+    width:100%;
+    text-align:center;
+    color:white;
+    font-family:cursive;
+    font-weight:bold;
+    font-size:2rem;
+    
+}
