@@ -67,3 +67,8 @@ body{
     font-size:2rem;
     
 }
+
+.userChooseContainer{
+    display:flex;
+    justify-content:space-evenly;
+}
