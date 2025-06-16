@@ -7,6 +7,12 @@ const choice={
     3:"scissor"
 };
 
+const imageChoice={
+    1:"/RockPaperScissor/media/rockImageOnly.png",
+    2:"/RockPaperScissor/media/paperImageOnly.png",
+    3:"/RockPaperScissor/media/scissorImageOnly.png"
+}
+
 
 function getRandomNumber() {
   return Math.floor(Math.random() * 3) + 1;
@@ -24,6 +30,8 @@ function getRandomNumber() {
 let rock=document.getElementById("userChoosesRock");
 let paper=document.getElementById("userChoosesPaper");
 let scissor=document.getElementById("userChoosesScissor");
+let userImg=document.getElementById("userImage");
+let computerImg=document.getElementById("computerImage");
 
 function checkWinOrLose(computerMove,possibleCombination,temp)
 {
@@ -31,14 +39,20 @@ function checkWinOrLose(computerMove,possibleCombination,temp)
 
     if(el[0]===el[1])
     {
+        userImg.src=imageChoice[temp];
+        computerImg.src=imageChoice[computerMove];
         console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Draw!!!`);
     }
 
     else if(el[0]-el[1]===1||el[0]-el[1]===-1){
+        userImg.src=imageChoice[temp];
+        computerImg.src=imageChoice[computerMove];
         el[0]>el[1]?console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`):console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`);
     }
 
     else if(el[0]-el[1]===2||el[0]-el[1]===-2){
+        userImg.src=imageChoice[temp];
+        computerImg.src=imageChoice[computerMove];
         el[0]>el[1]?console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`):console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`);
     }
     
