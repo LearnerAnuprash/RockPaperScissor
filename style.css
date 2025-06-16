@@ -119,3 +119,37 @@ body{
     margin-bottom:1.5rem;
     text-align:center;
 }
+
+#userImage{
+    width:6rem;
+    border-radius:1.1rem;
+    rotate:90deg;
+    position:absolute;
+}
+
+
+.outputContainer{
+    display:flex;
+    justify-content:space-evenly;
+    padding-top:3rem;
+}
+
+#computerImage{
+     width:6rem;
+    border-radius:1.1rem;
+    rotate:-90deg;
+    position:absolute;
+}
+
+.displayWhoseMove{
+    color:rgb(1, 55, 69);
+    font-family:'Rajdhani',sans-serif;
+    font-weight:bold;
+    font-size:1.4rem;
+    background:linear-gradient(rgb(226, 244, 250),rgb(125, 205, 251),rgb(252, 219, 219));
+    border-radius:2rem;
+    padding-left:0.4rem;
+    padding-right:0.4rem;
+    box-shadow:0.2rem 0.2rem 1rem rgb(20, 181, 199);
+}
+
