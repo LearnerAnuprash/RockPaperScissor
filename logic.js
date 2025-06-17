@@ -54,13 +54,13 @@ function checkWinOrLose(computerMove,possibleCombination,temp)
     else if(el[0]-el[1]===1||el[0]-el[1]===-1){
         userImg.src=imageChoice[temp];
         computerImg.src=imageChoice[computerMove];
-        el[0]>el[1]?(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`),userCount++,usrScore.innerHTML=userCount):(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`),computerCount++,computrScore.innerHTML=computerCount);
+        el[0]>el[1]?(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`),userCount++,setTimeout(()=>{usrScore.innerHTML=userCount},1000)):(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`),computerCount++,setTimeout(()=>{computrScore.innerHTML=computerCount},1000));
     }
 
     else if(el[0]-el[1]===2||el[0]-el[1]===-2){
         userImg.src=imageChoice[temp];
         computerImg.src=imageChoice[computerMove];
-        el[0]>el[1]?(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`),computerCount++,computrScore.innerHTML=computerCount):(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`),userCount++,usrScore.innerHTML=userCount);
+        el[0]>el[1]?(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.Computer wins!!!`),computerCount++,setTimeout(()=>{computrScore.innerHTML=computerCount},1000)):(console.log(`Computer chooses ${choice[computerMove]}.You choose ${choice[temp]}.You win!!!`),userCount++,setTimeout(()=>{usrScore.innerHTML=userCount},1000));
     }
     
     else{
@@ -68,12 +68,34 @@ function checkWinOrLose(computerMove,possibleCombination,temp)
     }
 }}
 
+//For shuffling effect 
+let idx=1;
+function shuffle(computerMove)
+{
+    let intervalID = setInterval(() => {
+        computerImg.src = imageChoice[idx];
+        idx++;
+        if(idx > 3)
+        {
+            idx = 1;
+        }
+    }, 100);
+
+    setTimeout(() => {
+        clearInterval(intervalID);
+        computerImg.src = imageChoice[computerMove]; // show final computer move
+    }, 1000);
+}
+
+
+
 rock.addEventListener("click",()=>
 {
     let computerMove=getRandomNumber();
     let possibleCombination=[
     [r,computerMove]];
 
+    shuffle(computerMove);
     checkWinOrLose(computerMove,possibleCombination,r);
     
 });
@@ -83,7 +105,8 @@ paper.addEventListener("click",()=>
     let computerMove=getRandomNumber();
     let possibleCombination=[
     [p,computerMove]]
-
+    
+    shuffle(computerMove);
     checkWinOrLose(computerMove,possibleCombination,p);
 });
 
@@ -93,6 +116,7 @@ scissor.addEventListener("click",()=>{
     let possibleCombination=[
     [s,computerMove]]
 
+    shuffle(computerMove);
      checkWinOrLose(computerMove,possibleCombination,s);
 });
 

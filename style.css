@@ -11,21 +11,17 @@ body{
     #022341 100%
     
   );
-  border:1rem solid white;
+        border:0.2rem solid white;
         height:100vh;
         
 }
 
 .headingIconContainer{
+    margin-top:0.5rem;
     display:flex;
     align-items:center;
     justify-content:center;
    
-}
-
-.headingIcon{
-    width:5rem;
-    height:6rem;
 }
 
 #mainHeading{
@@ -34,6 +30,9 @@ body{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color:rgb(249, 220, 163);
      border:0.2rem solid rgb(255, 224, 177);
+     box-shadow:0.2rem 0.2rem 1rem rgb(82, 63, 1);
+    background-color:rgb(255, 243, 153);
+    color:black;
     border-radius:2rem;
     padding-left:2rem;
     padding-right:2rem;
@@ -43,12 +42,8 @@ body{
 
 #mainHeading:hover{
     cursor:pointer;
-    box-shadow:0.2rem 0.2rem 1rem rgb(82, 63, 1);
-    background-color:rgb(255, 243, 153);
-    color:black;
     transform:scale(0.9);
-    transition:box-shadow 200ms,background-color 200ms , color 200ms,transform 200ms;
-    
+    transition:transform 200ms;
 }
 
 #rockHeading,#paperHeading{
@@ -126,6 +121,7 @@ body{
     border-radius:1.1rem;
     rotate:90deg;
     position:absolute;
+    transform:scaleX(-1);
 }
 
 
