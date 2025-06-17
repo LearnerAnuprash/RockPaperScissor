@@ -11,6 +11,7 @@ body{
     #022341 100%
     
   );
+  border:1rem solid white;
         height:100vh;
         
 }
@@ -65,7 +66,7 @@ body{
     font-family:cursive;
     font-weight:bold;
     font-size:2rem;
-    margin-top:20vh;
+    margin-top:12vh;
     
 }
 
@@ -75,8 +76,8 @@ body{
 }
 
 .userChoose{
-    margin-right:3rem;
-    margin-left:3rem;
+    margin-right:1.5rem;
+    margin-left:1.5rem;
 }
 
 .user{
@@ -166,7 +167,7 @@ body{
 
 .userScoreDisplay{
     background:linear-gradient(rgb(83, 125, 139),rgb(3, 78, 122),rgb(0, 31, 51));
-    border-radius:2rem;
+    border-radius:0.3rem;
     padding-left:0.4rem;
     padding-right:0.4rem;
     box-shadow:0.2rem 0.2rem 1rem rgb(1, 58, 65);
@@ -174,7 +175,7 @@ body{
 
 .computerScoreDisplay{
     background:linear-gradient(rgb(83, 125, 139),rgb(3, 78, 122),rgb(0, 31, 51));
-    border-radius:2rem;
+    border-radius:0.3rem;
     padding-left:0.4rem;
     padding-right:0.4rem;
     box-shadow:0.2rem 0.2rem 1rem rgb(1, 58, 65);
@@ -196,4 +197,32 @@ body{
 
 .computerScore{
     margin-right:2rem;
+}
+
+.resetButton{
+    color:white;
+    background:linear-gradient(rgb(6, 212, 240),rgb(2, 75, 92),rgb(0, 33, 35));
+    text-decoration:none;
+    width:fit-content;
+    height:2rem;
+    border-radius:1.5rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    font-family:'rajdhani',sans-serif;
+    font-weight:bold;
+    border:none;
+    font-size:1.5rem;
+}
+
+.resetButton:hover{
+    cursor:pointer;
+    color:black;
+    transform:scale(1.2);
+    background:linear-gradient(rgb(113, 238, 255),rgb(255, 255, 255),rgb(170, 170, 170));
+    transition:transform 200ms,color 100ms;
+}
+
+.reset{
+    display:flex;
+    justify-content:center;
 }
